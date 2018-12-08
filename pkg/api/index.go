@@ -293,6 +293,13 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 					Icon:        "gicon gicon-apikeys",
 					Url:         setting.AppSubUrl + "/org/apikeys",
 				},
+				{
+					Text:        "Legal Entities",
+					Id:          "legalentities",
+					Description: "Add legal entities",
+					Icon:        "fa fa-balance-scale",
+					Url:         setting.AppSubUrl + "/legalentities",
+				},
 			},
 		}
 

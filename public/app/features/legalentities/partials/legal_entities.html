@@ -1,0 +1,287 @@
+<page-header model="ctrl.navModel"></page-header>
+
+<div class="page-container page-body legal-entities-main-container">
+  <div class="info-container">
+    <div class="logo-container m-b-1">
+      <img ng-src="{{ctrl.logoSrc}}" class="logo m-b-1" />
+      <div class="gf-form m-b-1">
+        <input type="file" file-select="ctrl.getFile(file)" class="gf-form-file-input" accept="image/*" />
+      </div>
+    </div>
+    <div class="authorized-signatory-container m-b-3 m-t-3">
+      <h4>AUTHORIZED SIGNATORY</h4>
+      <div class="signatory-list m-t-2">
+        <div class="tile m-r-2">
+          <div class="tile-circle yellow">
+            <b>J</b>
+          </div>
+          <div class="tile-right-part">
+            <div class="tile-name">
+              <b>John</b>
+            </div>
+            <div class="tile-info">CEO</div>
+          </div>
+        </div>
+        <div class="tile">
+          <button type="submit" class="btn btn-primary">+ Add New Signatory</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="back-account-container m-b-3 m-t-3">
+      <h4>BANK ACCOUNTS</h4>
+      <div class="bank-account-list m-t-2">
+        <div class="tile m-r-2">
+          <div class="tile-circle green">
+            &#8377;
+          </div>
+          <div class="tile-right-part">
+            <div class="tile-name">
+              <b>HDFC Bank</b>
+            </div>
+            <div class="tile-info">Madhapur</div>
+          </div>
+        </div>
+        <div class="tile m-r-2">
+            <div class="tile-circle blue">
+              &#8377;
+            </div>
+            <div class="tile-right-part">
+              <div class="tile-name">
+                <b>State Bank Of India</b>
+              </div>
+              <div class="tile-info">Banglore</div>
+            </div>
+          </div>
+        <div class="tile">
+          <button type="submit" class="btn btn-primary">+ Add Bank Account</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-container">
+    <div class="tab-header">
+      <ul class="gf-tabs">
+        <li class="gf-tabs-item" ng-click="ctrl.activateTab(0)">
+          <a class="gf-tabs-link" ng-class="{'active': ctrl.activeTabIndex === 0}">Collage Info</a>
+        </li>
+        <li class="gf-tabs-item" ng-click="ctrl.activateTab(1)">
+          <a class="gf-tabs-link" ng-class="{'active': ctrl.activeTabIndex === 1}">IT Info</a>
+        </li>
+        <li class="gf-tabs-item" ng-click="ctrl.activateTab(2)">
+          <a class="gf-tabs-link" ng-class="{'active': ctrl.activeTabIndex === 2}">PF Info</a>
+        </li>
+        <li class="gf-tabs-item" ng-click="ctrl.activateTab(3)">
+          <a class="gf-tabs-link" ng-class="{'active': ctrl.activeTabIndex === 3}">ESI Info</a>
+        </li>
+        <li class="gf-tabs-item" ng-click="ctrl.activateTab(4)">
+          <a class="gf-tabs-link" ng-class="{'active': ctrl.activeTabIndex === 4}">PT Info</a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="tab-content">
+      <div ng-class="{'hide':ctrl.activeTabIndex !== 0}">
+        <div class="contnet">
+          <form class="gf-form-group section">
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">LEGAL NAME OF COLLEGE</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="College Name">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">DATE OF INCORPORATION</label>
+              <input type="date" class="gf-form-input max-width-18">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">COLLEGE IDENTIFICATION NUMBER</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="CIN1234567">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">TYPE OF COLLEGE</label>
+              <div class="gf-form-select-wrapper">
+                <select class="gf-form-input">
+                  <option label="Private" value="0" selected="selected">Private</option>
+                  <option label="Government" value="1">Government</option>
+                </select>
+              </div>
+            </div>
+            <div class="gf-form">
+              <label class="gf-form-label width-18">REGISTERED OFFICE ADDRESS</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="ADDRESS LINE 1">
+            </div>
+            <div class="gf-form">
+              <label class="empty-form-label gf-form-label width-18"></label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="ADDRESS LINE 2">
+            </div>
+            <div class="gf-form">
+              <label class="empty-form-label gf-form-label width-18"></label>
+              <input type="text" class="gf-form-input max-width-12" placeholder="CITY">
+              <input type="text" class="gf-form-input max-width-12" placeholder="STATE">
+              <input type="text" class="gf-form-input max-width-12" placeholder="PIN CODE">
+            </div>
+            <div class="gf-form-button-row">
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-class="{'hide':ctrl.activeTabIndex !== 1}">
+        <div class="contnet">
+          <form class="gf-form-group section">
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">PAN</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="TAN121234">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">TAN</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="TAN121234">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">FORM 16 SIGNATORY</label>
+              <div class="gf-form-select-wrapper">
+                <select class="gf-form-input">
+                  <option label="John" value="0" selected="selected">John</option>
+                  <option label="Doe" value="1">Doe</option>
+                </select>
+              </div>
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">TAN CIRCLE NUMBER</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="575765">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">CIT(TDS) LOCATION</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="Madhapur">
+            </div>
+            <div class="gf-form-button-row">
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-class="{'hide':ctrl.activeTabIndex !== 2}">
+        <div class="contnet">
+          <form class="gf-form-group section">
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">PF NUMBER</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="SYNEM839549052">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY</label>
+              <div class="gf-form-select-wrapper">
+                <select class="gf-form-input">
+                  <option label="John" value="0" selected="selected">John</option>
+                  <option label="Doe" value="1">Doe</option>
+                </select>
+              </div>
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY'S FATHER'S NAME</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="Mike">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">REGISTRATION DATE</label>
+              <input type="date" class="gf-form-input max-width-18">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY DESIGNATION</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="CEO">
+            </div>
+            <div class="gf-form-button-row">
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-class="{'hide':ctrl.activeTabIndex !== 3}">
+        <div class="contnet">
+          <form class="gf-form-group section">
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">ESI NUMBER</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="454876877985465">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY</label>
+              <div class="gf-form-select-wrapper">
+                <select class="gf-form-input">
+                  <option label="John" value="0" selected="selected">John</option>
+                  <option label="Doe" value="1">Doe</option>
+                </select>
+              </div>
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY'S FATHER'S NAME</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="Mike">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">REGISTRATION DATE</label>
+              <input type="date" class="gf-form-input max-width-18">
+            </div>
+            <div class="gf-form m-b-1">
+              <label class="gf-form-label width-18">SIGNATORY DESIGNATION</label>
+              <input type="text" class="gf-form-input max-width-18" placeholder="CEO">
+            </div>
+            <div class="gf-form-button-row">
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-class="{'hide':ctrl.activeTabIndex !== 4}">
+        <div class="contnet">
+          <form class="section">
+            <div class="gf-form-group">
+              <h3 class="page-heading">Karnataka</h3>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT NUMBER</label>
+                <input type="text" class="gf-form-input max-width-18" placeholder="4548768779">
+              </div>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT REGISTRATION DATE</label>
+                <input type="date" class="gf-form-input max-width-18">
+              </div>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT SIGNATORY</label>
+                <div class="gf-form-select-wrapper">
+                  <select class="gf-form-input">
+                    <option label="John" value="0" selected="selected">John</option>
+                    <option label="Doe" value="1">Doe</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="gf-form-group">
+              <h3 class="page-heading">Telangana</h3>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT NUMBER</label>
+                <input type="text" class="gf-form-input max-width-18" placeholder="4548768779">
+              </div>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT REGISTRATION DATE</label>
+                <input type="date" class="gf-form-input max-width-18">
+              </div>
+              <div class="gf-form m-b-1">
+                <label class="gf-form-label width-18">PT SIGNATORY</label>
+                <div class="gf-form-select-wrapper">
+                  <select class="gf-form-input">
+                    <option label="John" value="0" selected="selected">John</option>
+                    <option label="Doe" value="1">Doe</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="gf-form-button-row">
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,6 +23,7 @@ import { searchDirective } from './components/search/search';
 import { infoPopover } from './components/info_popover';
 import { navbarDirective } from './components/navbar/navbar';
 import { arrayJoin } from './directives/array_join';
+import { fileSelect } from './directives/file_select';
 import { liveSrv } from './live/live_srv';
 import { Emitter } from './utils/emitter';
 import { layoutSelector } from './components/layout_selector/layout_selector';
@@ -57,6 +58,7 @@ import { manageDashboardsDirective } from './components/manage_dashboards/manage
 export {
   profiler,
   registerAngularDirectives,
+  fileSelect,
   arrayJoin,
   coreModule,
   navbarDirective,
