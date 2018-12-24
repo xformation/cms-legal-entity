@@ -243,62 +243,79 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 	}
 
 	if c.IsGrafanaAdmin || c.OrgRole == m.ROLE_ADMIN {
+		// cfgNode := &dtos.NavLink{
+		// 	Id:       "cfg",
+		// 	Text:     "Configuration",
+		// 	SubTitle: "Organization: " + c.OrgName,
+		// 	Icon:     "gicon gicon-cog",
+		// 	Url:      setting.AppSubUrl + "/datasources",
+		// 	Children: []*dtos.NavLink{
+		// 		{
+		// 			Text:        "Data Sources",
+		// 			Icon:        "gicon gicon-datasources",
+		// 			Description: "Add and configure data sources",
+		// 			Id:          "datasources",
+		// 			Url:         setting.AppSubUrl + "/datasources",
+		// 		},
+		// 		{
+		// 			Text:        "Users",
+		// 			Id:          "users",
+		// 			Description: "Manage org members",
+		// 			Icon:        "gicon gicon-user",
+		// 			Url:         setting.AppSubUrl + "/org/users",
+		// 		},
+		// 		{
+		// 			Text:        "Teams",
+		// 			Id:          "teams",
+		// 			Description: "Manage org groups",
+		// 			Icon:        "gicon gicon-team",
+		// 			Url:         setting.AppSubUrl + "/org/teams",
+		// 		},
+		// 		{
+		// 			Text:        "Plugins",
+		// 			Id:          "plugins",
+		// 			Description: "View and configure plugins",
+		// 			Icon:        "gicon gicon-plugins",
+		// 			Url:         setting.AppSubUrl + "/plugins",
+		// 		},
+		// 		{
+		// 			Text:        "Preferences",
+		// 			Id:          "org-settings",
+		// 			Description: "Organization preferences",
+		// 			Icon:        "gicon gicon-preferences",
+		// 			Url:         setting.AppSubUrl + "/org",
+		// 		},
+
+		// 		{
+		// 			Text:        "API Keys",
+		// 			Id:          "apikeys",
+		// 			Description: "Create & manage API keys",
+		// 			Icon:        "gicon gicon-apikeys",
+		// 			Url:         setting.AppSubUrl + "/org/apikeys",
+		// 		},
+		// 		{
+		// 			Text:        "Legal Entities",
+		// 			Id:          "legalentities",
+		// 			Description: "Add legal entities",
+		// 			Icon:        "fa fa-balance-scale",
+		// 			Url:         setting.AppSubUrl + "/legalentities",
+		// 		},
+		// 	},
+		// }
+
 		cfgNode := &dtos.NavLink{
 			Id:       "cfg",
 			Text:     "Configuration",
-			SubTitle: "Organization: " + c.OrgName,
+			SubTitle: "Applications",
 			Icon:     "gicon gicon-cog",
-			Url:      setting.AppSubUrl + "/datasources",
+			Url:      setting.AppSubUrl + "/localapp",
 			Children: []*dtos.NavLink{
 				{
-					Text:        "Data Sources",
+					Text:        "Local App",
 					Icon:        "gicon gicon-datasources",
-					Description: "Add and configure data sources",
-					Id:          "datasources",
-					Url:         setting.AppSubUrl + "/datasources",
-				},
-				{
-					Text:        "Users",
-					Id:          "users",
-					Description: "Manage org members",
-					Icon:        "gicon gicon-user",
-					Url:         setting.AppSubUrl + "/org/users",
-				},
-				{
-					Text:        "Teams",
-					Id:          "teams",
-					Description: "Manage org groups",
-					Icon:        "gicon gicon-team",
-					Url:         setting.AppSubUrl + "/org/teams",
-				},
-				{
-					Text:        "Plugins",
-					Id:          "plugins",
-					Description: "View and configure plugins",
-					Icon:        "gicon gicon-plugins",
-					Url:         setting.AppSubUrl + "/plugins",
-				},
-				{
-					Text:        "Preferences",
-					Id:          "org-settings",
-					Description: "Organization preferences",
-					Icon:        "gicon gicon-preferences",
-					Url:         setting.AppSubUrl + "/org",
-				},
-
-				{
-					Text:        "API Keys",
-					Id:          "apikeys",
-					Description: "Create & manage API keys",
-					Icon:        "gicon gicon-apikeys",
-					Url:         setting.AppSubUrl + "/org/apikeys",
-				},
-				{
-					Text:        "Legal Entities",
-					Id:          "legalentities",
-					Description: "Add legal entities",
-					Icon:        "fa fa-balance-scale",
-					Url:         setting.AppSubUrl + "/legalentities",
+					Description: "Local Application",
+					Id:          "localapp",
+					Url:         setting.AppSubUrl + "/localapp",
 				},
 			},
 		}

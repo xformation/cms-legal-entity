@@ -1,0 +1,29 @@
+<div class="college-settings-container tab-container">
+    <div class="tab-header">
+        <ul class="gf-tabs">
+            <li class="gf-tabs-item" ng-repeat="section in ctrl.sections" ng-click="ctrl.setActiveTab(section.id)">
+                <a class="gf-tabs-link" ng-class="{active: ctrl.activeTabId === section.id}">
+                    {{::section.title}}
+                </a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="tab-content">
+        <div ng-class="{'hide':ctrl.activeTabId !== 'general_info'}">
+            This is general info
+        </div>
+        <div ng-class="{'hide':ctrl.activeTabId !== 'legal_entities'}">
+            <legal-entities></legal-entities>
+        </div>
+        <div ng-class="{'hide':ctrl.activeTabId !== 'locations'}">
+            This is locations
+        </div>
+        <div ng-class="{'hide':ctrl.activeTabId !== 'college_branches'}">
+            This is college branches
+        </div>
+        <div ng-class="{'hide':ctrl.activeTabId !== 'department_settings'}">
+            This i department settings
+        </div>
+    </div>
+</div>

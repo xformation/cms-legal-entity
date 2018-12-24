@@ -1,0 +1,43 @@
+<div class="local-app-container">
+  <aside class="dashboard-settings__aside aside-container">
+    <h2 class="dashboard-settings__aside-header">
+      <i class="fa fa-cog"></i>
+      Local Application
+    </h2>
+
+    <a href="{{::section.url}}" class="dashboard-settings__nav-item" ng-class="{active: ctrl.viewId === section.id}"
+      ng-repeat="section in ctrl.sections">
+      <i class="{{::section.icon}}"></i>
+      <div class="tab-title">{{::section.title}}</div>
+      <div class="tab-description">{{::section.description}}</div>
+    </a>
+  </aside>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'college_settings'">
+    <college-settings></college-settings>
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'payroll'">
+    This is payroll
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'leave_holidays'">
+    This is leave holidays
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'employee'">
+    This is employee
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'time_attendance'">
+    This is time settings
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'roles_permissions'">
+    This is roles permissions
+  </div>
+
+  <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'integrations'">
+    This is integration
+  </div>
+</div>

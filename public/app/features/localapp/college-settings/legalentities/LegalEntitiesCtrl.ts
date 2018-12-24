@@ -4,8 +4,7 @@ export class LegalEntitiesCtrl {
   logoSrc = '';
   $scope;
   /** @ngInject */
-  constructor($scope, navModelSrv) {
-    this.navModel = navModelSrv.getNav('cfg', 'legalentities', 0);
+  constructor($scope) {
     this.activeTabIndex = 0;
     this.$scope = $scope;
     $scope.getFile = this.getFile.bind(this);
